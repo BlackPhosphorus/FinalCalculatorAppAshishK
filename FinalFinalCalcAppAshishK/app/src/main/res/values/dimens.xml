@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textViewWidth">200dp</dimen>
+    <dimen name="textViewWidth">400dp</dimen>
+    <dimen name="textViewWidth">300dp</dimen>
+    <dimen name="textViewWidth">60dp</dimen>
+    <dimen name="textViewWidth">20dp</dimen>
+    <dimen name="textViewWidth">15dp</dimen>
+    <dimen name="textViewWidth">10dp</dimen>
+    <dimen name="textViewWidth">10dp</dimen>
+</resources>
