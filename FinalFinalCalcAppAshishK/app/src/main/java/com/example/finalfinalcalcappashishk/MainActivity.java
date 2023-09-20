@@ -13,6 +13,7 @@ import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
     TextView solution;
+    private Boolean equation = false;
     private String view2 = "";
     private double result = 0.0;
     void assignId(int id) {
@@ -50,8 +51,18 @@ public class MainActivity extends AppCompatActivity {
             view2 = "";
             result = 0.0;
             solution.setText(view2);
+            equation = false;
             return;
         }
+        if(buttonText.equals("/") || buttonText.equals("*") || buttonText.equals("+") || buttonText.equals("-")){
+            if(!equation) {
+                equation = true;
+            }
+            else {
+                buttonText = "";
+            }
+        }
+
         view2 += buttonText;
         solution.setText(view2);
         if (buttonText.equals("=")){
@@ -81,9 +92,16 @@ public class MainActivity extends AppCompatActivity {
             index = string.indexOf("/");
             operator = "/";
         }
+        else{
+            return parseDouble(string.substring(0, string.indexOf("=")));
+        }
         num1 = parseDouble(string.substring(0, index));
-        num2 = parseDouble(string.substring(index+1, string.length()-1));
-
+        if(index+1 == string.length() - 1){
+            num2 = 0;
+        }
+        else {
+            num2 = parseDouble(string.substring(index + 1, string.length() - 1));
+        }
         if (operator.equals("+")) {
             result = num1+num2;
         }
